@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="chat">
+        <header class="chat-header">
+            <h1>Airi</h1>
+            <span>AI Companion</span>
+        </header>
+
+        <section id="messages" class="messages"></section>
+
+        <form id="chat-form" class="chat-form">
+            <input
+                id="message-input"
+                type="text"
+                placeholder="Write a message..."
+                autocomplete="off"
+                required
+            >
+            <button type="submit" id="send-button">Send</button>
+        </form>
+
+        <p id="status" class="status"></p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,7 +1,9 @@
 # Imports
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 
 from backend.schemas import ChatRequest, ChatResponse
 from backend.services import ChatService
@@ -66,3 +68,12 @@ async def send_message(request: ChatRequest):
         conversation_id=request.conversation_id,
         response=answer
     )
+
+app.mount(
+    "/ui",
+    StaticFiles(
+        directory=Path(__file__).resolve().parent.parent / "frontend",
+        html=True,
+    ),
+    name="frontend",
+)
